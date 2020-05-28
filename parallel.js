@@ -16,6 +16,13 @@
 
 
  */
+
+ alert(  " READ ME  IL CODICE È IMPOSTATO PER INSERIRE A MANO  IL MASSIMO VALORE PRESENTE NEL DATASET  NELL APPOSITA VARIABILE DATO_MASSIMO poichè ho impostato mi serva  questo dato per far girare gli assi ");
+
+  
+   
+   
+
 // set the dimensions and margins of the graph
 var margin = {top: 30, right: 10, bottom: 10, left: 0},
   width = 800 - margin.left - margin.right,
