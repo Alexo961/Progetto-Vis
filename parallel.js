@@ -23,14 +23,13 @@ var margin = {top: 30, right: 10, bottom: 10, left: 0},
 
   var j=0;
   var corrisp ={};
-  var letter_posizione ={ "A":0,"B" :1,"C":2,"D":3   };
+
   var appoggio3 ={0:true,1: true,2: true,3: true};
   var space =[ "bianco1","bianco2","bianco3"];
   var appoggio ={0:"A",1:"B",2:"C",3:"D"};
   var appoggio4={"A":true,"B": true,"C": true,"D": true};
   var appoggio2 ={0:"A",1:"B",2:"C",3:"D"};
   var line = d3.line();
-  var click ={};
   var selected = true;
   var u=[];
   var r =0;
@@ -144,7 +143,7 @@ function truefalse(i,j){
 
 function changepath(n){
   
- // console.log(azz)
+ 
   for(i in azz){
     azz[i][Object.keys(azz[i])[n]]= DATO_MASSIMO-azz[i][Object.keys(azz[i])[n]]
   }
@@ -157,7 +156,7 @@ function changepath(n){
   .style("fill", "none")
   .style("stroke", "#69b3a2")
   .style("opacity", 1);
-  //console.log(bars)
+ 
 
   bar1.remove();
 }
@@ -201,8 +200,8 @@ svg.selectAll("myAxis")
 
   .on("click", function(d,i) {
     
-    console.log(d);
-    console.log(i);
+    
+    
    
    d3.selectAll(" #mauro").remove();
       if(appoggio4[d]== true){
@@ -226,11 +225,11 @@ svg.selectAll("myAxis")
 
     appoggio4[d]=false;
     mantieniaggiornato3app24(appoggio2,appoggio4);
-    console.log(appoggio2)
     
-    console.log(appoggio3);
-    console.log(appoggio4
-      )
+    
+    
+    
+      
       }
       else {
 
@@ -250,10 +249,7 @@ svg.selectAll("myAxis")
    
    appoggio4[d] = true;
    mantieniaggiornato3app24(appoggio2,appoggio4);
-   console.log(appoggio2);
    
-   console.log(appoggio3);
-   console.log(appoggio4);
   
       }
 
@@ -274,7 +270,7 @@ svg.selectAll("myAxis")
 .attr("id",function(d){return ""+j++}).style("opacity",0.02).attr("transform",function(d) { return "translate(" + (z(d)) + ")"; })
    .on("click",function(d,i){
 var miserve;
-var miserve2;
+
 
 
 
@@ -285,7 +281,7 @@ d3.selectAll( "#asse"+appoggio2[i+1]).transition().attr("transform",function(d) 
 //se clicco x sposto asse 0 a 1 
 d3.select( "#asse"+appoggio2[i]).transition().attr("transform",function(d) {  return "translate(" + (x(appoggio[i+1])) + ")" ; }).duration(1000)
 
-letter_posizione =[];
+
 
 d3.selectAll(" #mauro").remove();
 changepathn1n2(i,i+1);
@@ -298,9 +294,7 @@ appoggio2[i]=miserve;
 
 mantieniaggiornato3app24(appoggio2,appoggio4);
 
-console.log(appoggio2);
-console.log(appoggio3);
-console.log(appoggio4)
+
 
 
 }else if(appoggio3[i]== false && appoggio3[i+1]==false){
@@ -322,11 +316,9 @@ appoggio2[i]=miserve;
 mantieniaggiornato3app24(appoggio2,appoggio4);
 
 
-console.log(appoggio2);
-console.log(appoggio3);
-console.log(appoggio4);
+
 }else{
-  console.log("errore");
+ alert("errore . PUOI SCAMBIARE SOLO ASSI ORIENTATI NELLO STESSO VERSO");
 }
 
 
